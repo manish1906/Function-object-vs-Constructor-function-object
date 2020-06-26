@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="JavaScript.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        console.log("Hii");
+        //Constructor function object
+        function myDetails() {
+            console.log(this);
+            this.firstName = "Manish";
+            this.lastName = "Parmar";
+             this.fullName = function () {
+        console.log("Constructor function object");
+                 return this.firstName + " " + this.lastName;
+                 
+
+            }
+
+        }
+        var md = new myDetails();
+        
+        console.log(md.fullName());
+
+        myDetails.prototype.age = 20;
+        console.log(md.age);
+       
+        console.log(md.toSource()); 
+        
+        var myID =
+        {
+            firstName: "Manish",
+            lastName: "Parmar",
+            fullName: function () {
+                console.log("function object");
+                console.log(this.firstName + " " + this.lastName);
+                            }
+        
+        }
+       myID.fullName();
+   
+
+    </script>
+    <div ng-controller="demo">
+        <b>hello</b>  {{name}}
+    </div>
+
+
+</body>
+</html>
